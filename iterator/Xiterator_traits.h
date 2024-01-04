@@ -9,7 +9,7 @@
 #define _Xiterator_traits_h_
 
 #include "Xiterators.h"
-
+#include <iterator>
 template<class Iter>
 struct iterator_traits
 {
@@ -110,6 +110,24 @@ inline random_access_iterator_tag iterator_category(const random_access_iterator
     return random_access_iterator_tag(); 
 }
 
+// distance of two iter
+template<class Input_iter>
+inline typename iterator_traits<Input_iter>::difference_type __distance(Input_iter first,Input_iter second) 
+{
+    iterator_traits<Input_iter>::difference_type steps=0;
+    while(first != second) 
+    {
+        first++;
+        steps++;
+    }
+    return steps;
+}
+
+template<class Random_iter>
+inline typename iterator_traits<Random_iter>::difference_type __distance(Random_iter first,Random_iter second) 
+{
+    return second-first;
+}
 
 
 #endif

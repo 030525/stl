@@ -37,16 +37,16 @@ public:
     };
 
 
-    void construct(pointer p ,const T& x){}
-    void destroy(pointer p){}
+    void construct(pointer p ,const T& x);
+    void destroy(pointer p);
 
-    pointer allocate(size_type n ,const void * = 0){}
-    void deallocate(pointer p,size_type n){}
+    pointer allocate(size_type n ,const void * = 0);
+    void deallocate(pointer p,size_type n);
 
-    pointer address(reference x)const{}
-    const_pointer const_address(const_reference x)const{}
+    pointer address(reference x)const;
+    const_pointer const_address(const_reference x)const;
 
-    size_type max_size()const{}
+    size_type max_size()const;
 };
 
 }
